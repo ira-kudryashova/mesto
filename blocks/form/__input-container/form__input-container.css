@@ -1,0 +1,19 @@
+.form__input-container {
+    margin: 0;
+    padding: 24px 36px 0 36px;
+
+    width: 358px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    border: 0;
+}
+
+@media screen and (max-width: 320px) {
+    .form__input-container {
+        width: 282px;
+        padding: 45px 22px 0 22px;
+    }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Mesto</title>
+</head>
+<body class="root">
+    <div class="page">
+         
+        <div class="popup">
+            <form class="form">
+                <button class="form__close-button"></button>
+                <h2 class="form__name">Редактировать профиль</h2>
+    
+                    <fieldset class="form__input-container">
+                        <input type="text" class="form__item form__item_name" id="name" value="Жак-Ив Кусто">
+                        <input type="text" class="form__item form__item_job" id="job" value="Исследователь океана">
+                    </fieldset>
+    
+                <button class="form__submit" type="submit">Сохранить</button>
+            </form>
+        </div>
+
+        <header class="header">
+            <img class="header__logo" src="./images/logo.svg" alt="Место">
+            <img class="header__line" src="./images/line.svg" alt="Линия">
+        </header>
+        
+        <main class="content">
+
+            <section class="profile">
+                <img class="profile__avatar" src="./images/avatar-2.png" alt="Фото Жака-Ива Кусто">
+                <div class="profile__info">
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <img class="profile__edit-button" src="./images/edit-button.svg" alt="Кнопка редактирования профиля">
+                    <p class="profile__job">Исследователь океана</p>
+                </div>
+                <button class="profile__add-button">
+                    <img src="./images/add-button.svg" alt="Кнопка добавления профиля">
+                </button>
+            </section>
+
+            <section class="cards">
+                <article class="card">
+                    <img class="card__pic" src="./images/dombai-2.png" alt="Домбай">
+                    <div class="card__description">
+                        <h2 class="card__name">Домбай</h2>
+                        <img class="card__like" src="./images/like.svg" alt="Значок лайк">
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__pic" src="./images/elbrus-2.png" alt="Эльбрус">
+                    <div class="card__description">
+                        <h2 class="card__name">Гора Эльбрус</h2>
+                        <img class="card__like" src="./images/like.svg" alt="Значок лайк">
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__pic" src="./images/karachaevsk-2.png" alt="Карачаево-Черкессия">
+                    <div class="card__description">
+                        <h2 class="card__name">Карачаево-Черкессия</h2>
+                        <img class="card__like" src="./images/like.svg" alt="Значок лайк">
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__pic" src="./images/firenze-2.JPG" alt="Флоренция">
+                    <div class="card__description">
+                        <h2 class="card__name">Флоренция</h2>
+                        <img class="card__like" src="./images/like.svg" alt="Значок лайк">
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__pic" src="./images/dagestan-2.jpeg" alt="Дагестан">
+                    <div class="card__description">
+                        <h2 class="card__name">Дагестан</h2>
+                        <img class="card__like" src="./images/like.svg" alt="Значок лайк">
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__pic" src="./images/prague-2.JPG" alt="Прага">
+                    <div class="card__description">
+                        <h2 class="card__name">Прага</h2>
+                        <img class="card__like" src="./images/like.svg" alt="Значок лайк">
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <h3 class="footer__copyright">&copy; 2023 Mesto Russia</h3>
+        </footer>
+    </div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
