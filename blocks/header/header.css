@@ -11,8 +11,8 @@
     .header {
         margin: 28px auto 0 auto;
 
-        width: 320px;
-        height: 56px;
+        max-width: 320px;
         width: 100%;
+        height: 56px;
     }
 }

@@ -12,7 +12,7 @@
 
 @media screen and (max-width: 640px) {
     .profile__info {
-        margin-bottom: 45px;  
+        margin-bottom: 45px;
         justify-content: center;
     }
 }
@@ -23,6 +23,6 @@
         padding: 26px 0 36px 0;
 
         max-width: 282px;
-        height: 54px; 
+        height: 54px;
     }
 }
