@@ -1,13 +1,11 @@
 .card__name {
-    max-width: 195px;
     margin: 0;
-    
+    max-width: 195px;
+    width: 100%;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-
     color: #000;
-    
     font-family: inherit;
     font-style: normal;
     font-weight: 900;

@@ -1,11 +1,8 @@
 .card {
-    width: 282px;
-    height: 361px;
-
+    max-width: 282px;
+    width: 100%;
     display: flex;
-    position: relative;
     flex-direction: column;
-
     background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
@@ -13,12 +10,25 @@
 
 @media screen and (max-width: 768px) {
     .card {
-        width: 322px;
+        max-width: 322px;
+    }
+}
+
+@media screen and (max-width: 664px) {
+    .card {
+        max-width: 290px;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .card {
+        max-width: 322px;
     }
 }
 
 @media screen and (max-width: 320px) {
     .card {
-        width: 282px;
+        max-width: 282px;
+        width: 100%;
     }
 }

@@ -1,35 +1,31 @@
 .profile__name {
     margin: 0;
     padding: 0;
-
+    width: 294px;
     font-family: inherit;
     font-style: normal;
     font-weight: 500;
     font-size: 42px;
-    line-height: 48px;  
+    line-height: 48px;
+    box-sizing: border-box;
 }
 
-@media screen and (max-width: 629px) {
+@media screen and (max-width: 414px) {
     .profile__name {
+        max-width: 250px;
+        width: 100%;
         font-size: 32px;
         line-height: 38px; 
 
     }
 }
 
-@media screen and (max-width: 563px) {
-    .profile__name {
-        font-size: 30px;
-        line-height: 36px; 
-
-    }
-}
-
 @media screen and (max-width: 320px) {
     .profile__name {
-        padding-left: 46px;
+        max-width: 189px;
+        width: 100%;
+        margin-left: 18px;
         padding-bottom: 14px;
-
         font-size: 27px;
         line-height: 33px;
         text-align: center;

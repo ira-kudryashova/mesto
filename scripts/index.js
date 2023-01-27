@@ -2,12 +2,12 @@ let editButton = document.querySelector('.profile__edit-button');
 let popup = document.querySelector('.popup');
 
 editButton.addEventListener('click', function() {
-    popup.classList.add('popup__opened');
+    popup.classList.add('popup_opened');
 });
 
 let closeButton = document.querySelector('.form__close-button');
 closeButton.addEventListener('click', function () {
-    popup.classList.remove('popup__opened');
+    popup.classList.remove('popup_opened');
 });
 
    // Находим форму в DOM
@@ -28,7 +28,7 @@ function handleFormSubmit (evt) {
     nameTitle.textContent = nameInputValue; // Вставьте новые значения с помощью textContent
     jobTitle.textContent = jobInputValue;
 
-    popup.classList.remove('popup__opened');
+    popup.classList.remove('popup_opened');
 }
 
 // Прикрепляем обработчик к форме:

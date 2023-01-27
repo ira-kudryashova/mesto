@@ -1,11 +1,9 @@
 .card__like {
-    display: block;
-    position: relative;
     margin: 0;
     padding: 0;
-    
-    width: 22px;
-    height: 19px;
+    display: block;
+    cursor: pointer;
+    transition: 1s ease;
 }
 
 .card__like:hover {
