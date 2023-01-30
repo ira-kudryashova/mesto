@@ -12,6 +12,7 @@
     .card {
         max-width: 212px;
     }
+}
 
 @media screen and (max-width: 768px) {
     .card {
