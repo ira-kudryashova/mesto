@@ -6,14 +6,13 @@
     font-weight: 900;
     font-size: 24px;
     line-height: 29px;
-
     color: #000000;
 }
 
 @media screen and (max-width: 500px) {
     .form__name {
+        padding: 25px 22px 0 22px;
         font-size: 18px;
         line-height: 22px;
-        padding: 25px 22px 0 22px;
     }
 }

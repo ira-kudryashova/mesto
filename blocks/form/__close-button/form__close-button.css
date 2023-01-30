@@ -4,6 +4,8 @@
     position: absolute;
     left: 100%;
     bottom: 100%;
+    align-self: flex-end;
+    transform: translate(8px, -8px);
     background: url('../../..//images/close-button.svg');
     background-size: cover;
     border: none;
@@ -12,7 +14,7 @@
 }
 
 .form__close-button:hover {
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 320px) {

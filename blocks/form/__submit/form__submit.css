@@ -15,6 +15,7 @@
     font-size: 18px;
     line-height: 22px;
     text-align: center;
+    border: none;
 }
 
 .form__submit:hover {
@@ -23,9 +24,15 @@
 
 @media screen and (max-width: 500px) {
     .form__submit {
+        margin: 15px 22px 25px 22px;
         max-width: 238px;
         width: 100%;
-        min-height: 46px;
-        margin: 15px 22px 0 22px;
+        height: 46px;
+        font-family: inherit;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
     }
 }

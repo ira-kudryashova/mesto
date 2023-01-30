@@ -2,16 +2,16 @@
     max-width: 366px;
     padding-left: 30px;
     width: 100%;
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 680px) {
     .profile__info {
-        padding: 26px 0 36px 0;
-        justify-content: center;
+        padding: 26px 0 26px 0;  
     }
 }
 
@@ -19,16 +19,13 @@
     .profile__info {
         margin-left: 0;
         margin-bottom: 0;
-        padding: 26px 0 26px 0;
-        width: 100%;
-    }
+        justify-content:center;
+   }
 }
 
 @media screen and (max-width: 320px) {
     .profile__info {
-        margin-left: 0;
-        margin-bottom: 0;
-        padding: 26px 0 26px 0;
         max-width: 282px;
+        padding: 26px 0 36px 0;
     }
 }

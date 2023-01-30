@@ -1,6 +1,6 @@
 .popup {
     display: none;
-    align-content: center;
+    align-items: center;
     justify-content: center;
     position: fixed;
     z-index: 999;

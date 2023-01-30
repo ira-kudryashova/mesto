@@ -3,12 +3,14 @@
     max-width: 880px;
     width: 100%;
     border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+    box-sizing: border-box;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 895px) {
     .header {
         max-width: 720px;
-        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
@@ -16,14 +18,13 @@
     .header {
         margin: 30px auto 0 auto;
         max-width: 414px;
-        width: 100%;
     }
 }
 
 @media (max-width: 320px) {
     .header {
         margin: 28px auto 0 auto;
+        padding: 0;
         max-width: 320px;
-        width: 100%;
     }
 }
