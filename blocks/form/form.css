@@ -14,7 +14,6 @@
 @media screen and (max-width: 500px) {
     .form {
         max-width: 282px;
-        width: 100%;
-        gap: 30px;
+        margin: 0 auto;
     }
 }

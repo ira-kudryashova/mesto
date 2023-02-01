@@ -26,6 +26,7 @@
     .profile__name {
         max-width: 189px;
         padding-bottom: 7px;
+        margin: 0 0 0 45px;
         font-size: 27px;
         line-height: 33px;
         text-align: center;

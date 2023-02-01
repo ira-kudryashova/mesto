@@ -22,17 +22,20 @@
     opacity: 0.8;
 }
 
+@media screen and (max-width: 530px) {
+    .form__submit {
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 @media screen and (max-width: 500px) {
     .form__submit {
         margin: 15px 22px 25px 22px;
         max-width: 238px;
-        width: 100%;
         height: 46px;
-        font-family: inherit;
-        font-style: normal;
-        font-weight: 400;
         font-size: 14px;
         line-height: 17px;
-        text-align: center;
     }
 }

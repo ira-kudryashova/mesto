@@ -12,8 +12,6 @@
 @import url(../blocks/form/__name/form__name.css);
 @import url(../blocks/form/__input-container/form__input-container.css);
 @import url(../blocks/form/__item/form__item.css);
-@import url(../blocks/form/__item/_name/form__item_name.css);
-@import url(../blocks/form/__item/_job/form__item_job.css);
 @import url(../blocks/form/__submit/form__submit.css);
 
 @import url(../blocks/header/header.css);
