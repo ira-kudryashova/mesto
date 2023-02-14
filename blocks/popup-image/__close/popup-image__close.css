@@ -13,7 +13,7 @@
     transition: 1s ease;
 }
 
-.popup-image__close {
+.popup-image__close:hover {
     opacity: 0.6;
 }
 
