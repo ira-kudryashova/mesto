@@ -4,6 +4,13 @@
     display: block;
     cursor: pointer;
     transition: 1s ease;
+    background-color: transparent;
+    border: none;
+    background-image: url(../../../images/like.svg);
+    width: 22px;
+    height: 19px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .card__like:hover {

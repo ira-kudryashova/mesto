@@ -12,6 +12,7 @@
         <header class="header">
             <img class="header__logo" src="./images/logo.svg" alt="логотип сайта Место">
         </header>      
+       
         <main class="content">
             <section class="profile">
                 <img class="profile__avatar" src="./images/avatar-2.png" alt="Аватар пользователя">
@@ -22,66 +23,14 @@
                 </div>
                 <button class="profile__add-button" type="button" aria-label="Кнопка добавления фотографии"></button>
             </section>
-            <section class="cards" aria-label="Фотографии">
-                <article class="card">
-                    <img class="card__pic" src="./images/dombai-2.png" alt="Домбай">
-                    <div class="card__description">
-                        <h2 class="card__name">Домбай</h2>
-                        <button class="card__button" type="button">
-                            <img class="card__like" src="./images/like.svg" alt="Значок лайк">
-                        </button>
-                    </div>
-                </article>
-                <article class="card">
-                    <img class="card__pic" src="./images/elbrus-2.png" alt="Эльбрус">
-                    <div class="card__description">
-                        <h2 class="card__name">Гора Эльбрус</h2>
-                        <button class="card__button" type="button">
-                            <img class="card__like" src="./images/like.svg" alt="Значок лайк">
-                        </button>
-                    </div>
-                </article>
-                <article class="card">
-                    <img class="card__pic" src="./images/karachaevsk-2.png" alt="Карачаево-Черкессия">
-                    <div class="card__description">
-                        <h2 class="card__name">Карачаево-Черкессия</h2>
-                        <button class="card__button" type="button">
-                            <img class="card__like" src="./images/like.svg" alt="Значок лайк">
-                        </button>
-                    </div>
-                </article>
-                <article class="card">
-                    <img class="card__pic" src="./images/firenze-2.JPG" alt="Флоренция">
-                    <div class="card__description">
-                        <h2 class="card__name">Флоренция</h2>
-                        <button class="card__button" type="button">
-                            <img class="card__like" src="./images/like.svg" alt="Значок лайк">
-                        </button>
-                    </div>
-                </article>
-                <article class="card">
-                    <img class="card__pic" src="./images/dagestan-2.jpeg" alt="Дагестан">
-                    <div class="card__description">
-                        <h2 class="card__name">Дагестан</h2>
-                        <button class="card__button" type="button">
-                            <img class="card__like" src="./images/like.svg" alt="Значок лайк">
-                        </button>
-                    </div>
-                </article>
-                <article class="card">
-                    <img class="card__pic" src="./images/prague-2.JPG" alt="Прага">
-                    <div class="card__description">
-                        <h2 class="card__name">Прага</h2>
-                        <button class="card__button" type="button">
-                            <img class="card__like" src="./images/like.svg" alt="Значок лайк">
-                        </button>
-                    </div>
-                </article>
-            </section>
+            
+            <section class="cards" aria-label="Фотографии"></section>
         </main>
+        
         <footer class="footer">
             <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
         </footer>
+       
         <div class="popup">
             <div class="popup__container">
                 <form class="form" name="popup-form">
@@ -95,7 +44,45 @@
                 </form>
             </div>
         </div>
-    </div>   
+
+        <div class="popup-add">
+            <div class="popup-add__container">
+                <form class="form form__submit_card" name="popup-form">
+                    <button class="form__cl-button" type="button"></button>
+                    <h2 class="form__name">Новое место</h2>
+                        <fieldset class="form__input-container">
+                            <input type="text" name="name" class="form__item form__item_image_name" placeholder="Название">
+                            <input type="url" name="link" class="form__item form__item_image_link" placeholder="Ссылка на картинку">
+                        </fieldset>   
+                    <button class="form__submit" type="submit">Создать</button>
+                </form>
+            </div>
+        </div> 
+
+        <div class="popup-image">
+            <div class="popup-image__container">
+                <button type="button" class="popup-image__close"></button>
+                <figure class="figure">
+                    <image class="popup-image__pic" src="./images/korea (1).png" alt="#">
+                    <figcaption class="popup-image__title">Сеул</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    
+        <template id="card__template">
+            <article class="card">
+                <div class="card__image">
+                    <img class="card__pic" src="" alt="">
+                    <button class="card__trash" type="button" aria-label="Значок удаления карточки"></button>
+                </div>
+                <div class="card__description">
+                    <h2 class="card__name"></h2>
+                    <button class="card__like" type="button" aria-label="Значок лайк"></button>
+                </div>
+            </article>
+        </template>
+
     <script src="./scripts/index.js"></script>
 </body>
 </html>

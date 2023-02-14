@@ -16,25 +16,6 @@
 
 @media screen and (max-width: 768px) {
     .card {
-        max-width: 322px;
-    }
-}
-
-@media screen and (max-width: 664px) {
-    .card {
-        max-width: 290px;
-    }
-}
-
-@media screen and (max-width: 599px) {
-    .card {
-        max-width: 322px;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .card {
         max-width: 282px;
-        width: 100%;
     }
 }
