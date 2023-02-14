@@ -37,7 +37,7 @@ const addButton = document.querySelector('.profile__add-button'); //кнопка
 const buttonClose = document.querySelector('.form__close-button');// кнопка закрытия popup
 const closeBtbPopupAdd = document.querySelector('.form__cl-button');//кнопка закрытия popup-add
 const closeBtnPopupImage = document.querySelector('.popup-image__close');//кнопка закрытия popup-image
-const submitCard = document.querySelector('.form__submit_card');//кнопка сохранения новой карточки
+const submitCard = document.querySelector('.form_sb');
 
 const formElement = document.querySelector('.form');
 
@@ -96,7 +96,7 @@ submitCard.addEventListener('submit', (e) => {
       });
   });
 
-    //возможность удалить новую карточку
+    
     newButtonTrash.forEach(newTrash => {
       newTrash.addEventListener('click', () => {
       const parentOfNewTrash = newTrash.closest('.card');
