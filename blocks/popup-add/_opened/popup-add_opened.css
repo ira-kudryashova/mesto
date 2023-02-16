@@ -1,6 +1,0 @@
-.popup-add_opened {
-    display: flex;
-    position: fixed;
-    z-index: 10;
-    opacity: 1;
-}
