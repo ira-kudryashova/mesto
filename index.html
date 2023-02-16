@@ -31,37 +31,37 @@
             <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
         </footer>
        
-        <div class="popup">
+        <div class="popup" id="popup-profile">
             <div class="popup__container">
-                <form class="form" name="popup-form">
-                    <button class="form__close-button" type="button"></button>
+                <form class="form form-profile" name="popup-form">
+                    <button class="popup__close" type="button"></button>
                     <h2 class="form__name">Редактировать профиль</h2>
                         <fieldset class="form__input-container">
                             <input type="text" name="name" class="form__item form__item_user_name">
                             <input type="text" name="job" class="form__item form__item_user_job">
                         </fieldset>   
-                    <button class="form__submit" type="submit">Сохранить</button>
+                    <button class="form__submit-button" type="submit">Сохранить</button>
                 </form>
             </div>
         </div>
 
-        <div class="popup-add">
+        <div class="popup" id="popup-add">
             <div class="popup-add__container">
-                <form class="form form_sb" name="popup-form">
-                    <button class="form__cl-button" type="button"></button>
+                <form class="form form-cards" name="popup-form">
+                    <button class="popup__close" type="button"></button>
                     <h2 class="form__name">Новое место</h2>
                         <fieldset class="form__input-container">
                             <input type="text" name="name" class="form__item form__item_image_name" placeholder="Название">
                             <input type="url" name="link" class="form__item form__item_image_link" placeholder="Ссылка на картинку">
                         </fieldset>   
-                    <button class="form__submit" type="submit">Создать</button>
+                    <button class="form__submit-button" type="submit">Создать</button>
                 </form>
             </div>
         </div> 
 
-        <div class="popup-image">
+        <div class="popup" id="popup-image">
             <div class="popup-image__container">
-                <button type="button" class="popup-image__close"></button>
+                <button type="button" class="popup__close"></button>
                 <figure class="figure">
                     <img class="popup-image__pic" src="#" alt="Фотография пользователя">
                     <figcaption class="popup-image__title"></figcaption>

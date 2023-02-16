@@ -1,4 +1,4 @@
-.form__cl-button {
+.popup__close {
     width: 32px;
     height: 32px;
     position: absolute;
@@ -13,19 +13,19 @@
     transition: 1s ease;
 }
 
-.form__cl-button:hover {
+.popup__close:hover {
     opacity: 0.6;
 }
 
 @media screen and (max-width: 530px) {
-    .form__cl-button {
+    .popup__close {
         width: 24px;
         height: 24px;
     }
 }
 
 @media screen and (max-width: 360px) {
-    .form__cl-button {
+    .popup__close {
         width: 20px;
         height: 20px;
         transform: translate(-100%, -100%);
