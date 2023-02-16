@@ -27,9 +27,9 @@ const initialCards = [
 ];
 
 //переменные
-const popupProfile = document.querySelector('#popup-profile'); //мод.окно профиля
-const popupAdd = document.querySelector('#popup-add'); //мод.окно добавления карточки
-const popupImage = document.querySelector('#popup-image'); //мод.окно картинки
+const popupProfile = document.querySelector('.popup-profile'); //мод.окно профиля
+const popupAdd = document.querySelector('.popup-add'); //мод.окно добавления карточки
+const popupImage = document.querySelector('.popup-image'); //мод.окно картинки
 
 const buttonEdit = document.querySelector('.profile__edit-button');//кнопка редактирования профиля
 const addButton = document.querySelector('.profile__add-button'); //кнопка добавления картинки
