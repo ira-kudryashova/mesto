@@ -3,5 +3,6 @@
     max-height: 75vh;
     width: 100%;
     aspect-ratio: auto;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
 }
