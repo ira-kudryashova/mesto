@@ -87,7 +87,7 @@ function createCard(item) {
   const cardAlt = item.name;
   const cardElement = cardTemplate.content.cloneNode(true);
   cardElement.querySelector(".card__name").textContent = cardName;
-  const imageCard = cardElement.querySelector('.card__pic');
+  const imageCard = cardElement.querySelector(".card__pic");
   imageCard.src = cardLink;
   imageCard.alt = cardAlt;
 
@@ -125,25 +125,27 @@ function createCard(item) {
   });
 
   return cardElement;
-};
+}
 
 const addNewCard = (item) => {
   cardsBlock.prepend(createCard(item));
 };
 
-initialCards.forEach(function(item) {
+initialCards.forEach(function (item) {
   cardsBlock.append(createCard(item));
 });
 
 formCards.addEventListener("submit", (evt) => {
   evt.preventDefault();
-  addNewCard((item = {
+  addNewCard(
+    (item = {
       name: nameImageAdd.value,
       link: linkImageAdd.value,
-    }));
-    // cardsBlock;
-    evt.target.reset();
-    closePopup(popupAdd);
+    })
+  );
+  // cardsBlock;
+  evt.target.reset();
+  closePopup(popupAdd);
 });
 
 //открытие и редактирование полей попап профиля нажатием на кнопку редактирования
