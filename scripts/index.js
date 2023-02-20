@@ -1,6 +1,3 @@
-//все три попап открываются и открывались в предыдущих итерациях тоже, проверяла на разных устройствах
-//(в т.ч. просила проверить одногруппников)
-
 // массив карточек
 const initialCards = [
   {
@@ -91,37 +88,28 @@ function createCard(item) {
   imageCard.src = cardLink;
   imageCard.alt = cardAlt;
 
-  const buttonLike = cardElement.querySelectorAll(".card__like");
-  const buttonTrash = cardElement.querySelectorAll(".card__trash");
-  const cardImage = cardElement.querySelectorAll(".card__pic");
+  const buttonLike = cardElement.querySelector(".card__like");
+  const buttonTrash = cardElement.querySelector(".card__trash");
+  const cardImage = cardElement.querySelector(".card__pic");
 
-  //лайк каждой карточки
-  buttonLike.forEach(function (likeActive) {
-    likeActive.addEventListener("click", function () {
-      likeActive.classList.toggle("card__like_active");
-    });
+  //лайк карточки
+  buttonLike.addEventListener("click", function () {
+    buttonLike.classList.toggle("card__like_active");
   });
 
   //удаление любой карточки нажатием кнопки удаления
-  buttonTrash.forEach((trash) => {
-    trash.addEventListener("click", () => {
-      const parentOfTrash = trash.closest(".card");
-      parentOfTrash.remove();
-    });
+  buttonTrash.addEventListener("click", function () {
+    const parentOfTrash = buttonTrash.closest(".card");
+    parentOfTrash.remove();
   });
 
   // открытие попап с картинкой по клику на карточку
-  cardImage.forEach(function (imageOfCard) {
-    imageOfCard.addEventListener("click", function () {
-      const pathOfImage = imageOfCard.src;
-      const parentOfCard = imageOfCard.closest(".card");
-      const titleOfCard = parentOfCard.querySelector(".card__name").textContent;
-      imageClicked.src = pathOfImage;
-      imageClicked.alt = pathOfImage;
-      nameImageClicked.textContent = titleOfCard;
+  cardImage.addEventListener("click", function () {
+    imageClicked.src = cardLink;
+    imageClicked.alt = cardName;
+    nameImageClicked.textContent = cardAlt;
 
-      openPopup(popupImage);
-    });
+    openPopup(popupImage);
   });
 
   return cardElement;
@@ -137,13 +125,11 @@ initialCards.forEach(function (item) {
 
 formCards.addEventListener("submit", (evt) => {
   evt.preventDefault();
-  addNewCard(
-    (item = {
-      name: nameImageAdd.value,
-      link: linkImageAdd.value,
-    })
-  );
-  // cardsBlock;
+  addNewCard({
+    name: nameImageAdd.value,
+    link: linkImageAdd.value,
+  });
+
   evt.target.reset();
   closePopup(popupAdd);
 });
