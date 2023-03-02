@@ -12,6 +12,7 @@
     background: rgba(0, 0, 0, 0.5);
     transition: visibility 1s, opacity 1s;
     overflow: hidden;
+    cursor: pointer;
     /*z-index: 999;*/
     /* z-index: -10; */
 }
