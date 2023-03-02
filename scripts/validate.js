@@ -15,7 +15,7 @@ function disabledSubmit(e) {
 // Функция, которая добавляет класс с ошибкой. 
 const showInputError = (object, formElement, inputElement, errorMessage) => {
   // находим элемент ошибки внутри самой функции
-  const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(object.inputErrorClass);
   errorElement.textContent = errorMessage; // Показываем сообщение об ошибке
   errorElement.classList.add(object.errorClass); // Замена содержимого span с ошибкой на переданный параметр
@@ -23,7 +23,7 @@ const showInputError = (object, formElement, inputElement, errorMessage) => {
 
 // Функция, которая удаляет класс с ошибкой.
 const hideInputError = (object, formElement, inputElement) => {
-  const errorElement = formElement.querySelector(`#${inputElement.id}-error`); // находим элемент ошибки
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`); // находим элемент ошибки
   inputElement.classList.remove(object.inputErrorClass);
   errorElement.classList.add(object.errorClass); //почему не remove?
   errorElement.textContent = ''; //Скрываем сообщение об ошибке
