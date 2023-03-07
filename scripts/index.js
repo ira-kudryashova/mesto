@@ -73,6 +73,11 @@ function closePopup(popup) {
   document.removeEventListener("click", closeWithinPopup);
 }
 
+//Cброс инпутов
+function clearInput(e) {
+  e.target.reset();
+}
+
 function handleFormProfileSubmit(e) {
   //отправка данных(заполнение профиля пользователя)
   e.preventDefault();
@@ -90,15 +95,18 @@ function createCard(item) {
   const cardName = item.name;
   const cardLink = item.link;
   const cardAlt = item.name;
-  const cardElement = cardTemplate.content.cloneNode(true);
-  cardElement.querySelector(".card__name").textContent = cardName;
-  const imageCard = cardElement.querySelector(".card__pic");
+  const cardElement = cardTemplate.content.cloneNode(true); //клонирование шаблона template
+  const cardCloned = cardElement.querySelector('.card'); //ищем в клонированном шаблоне карточку (елемент, который нужно перезаписать)
+  cardCloned.querySelector('.card__name').textContent = cardName; //работа с данными внутри найденного элемента выше
+  const imageCard = cardCloned.querySelector('.card__pic'); //работа с данными внутри найденного элемента выше
+  // cardElement.querySelector('.card__name').textContent = cardName;
+  // const imageCard = cardElement.querySelector('.card__pic');
   imageCard.src = cardLink;
   imageCard.alt = cardAlt;
 
-  const buttonLike = cardElement.querySelector(".card__like");
-  const buttonTrash = cardElement.querySelector(".card__trash");
-  const cardImage = cardElement.querySelector(".card__pic");
+  const buttonLike = cardCloned.querySelector('.card__like'); // работа с данными внутри найденного элемента выше
+  const buttonTrash = cardCloned.querySelector('.card__trash'); // работа с данными внутри найденного элемента выше
+  const cardImage = cardCloned.querySelector('.card__pic'); // работа с данными внутри найденного элемента выше
 
   //лайк карточки
   buttonLike.addEventListener("click", function () {
@@ -120,7 +128,8 @@ function createCard(item) {
     openPopup(popupImage);
   });
 
-  return cardElement;
+  return cardCloned; // возвращаем новую клонированную карточку (не сам шаблон)
+  // return cardElement;
 }
 
 const addNewCard = (item) => {
@@ -138,8 +147,8 @@ formCards.addEventListener("submit", (e) => {
     link: linkImageAdd.value,
   });
 
-  e.target.reset();
-  closePopup(popupAdd);
+  // e.target.reset();
+  closePopup(popupAdd, clearInput(e));
 });
 
 //открытие и редактирование полей попап профиля нажатием на кнопку редактирования
