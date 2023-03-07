@@ -1,33 +1,4 @@
-// массив карточек
-const initialCards = [
-  {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-  },
-  {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-  },
-  {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-  },
-  {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-  },
-  {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-  },
-  {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-  },
-];
-
-// import { enableValidation } from './validate';
-// import { obj } from './validate';
+import { obj, enableValidation } from "./validate.js";
 
 //переменные
 const popupProfile = document.querySelector(".popup-profile"); //мод.окно профиля
@@ -56,9 +27,6 @@ const cardsBlock = document.querySelector(".cards"); //секция всех к�
 const cardTemplate = document.querySelector("#card__template"); //шаблон карточки
 const card = document.querySelector(".card");
 
-//import { obj } from './validates';
-//import { disabledSubmitBtm, activeSubmitBtm } from './validate';
-
 // все кнопки закрытия popup
 const closeButtons = document.querySelectorAll(".popup__close");
 closeButtons.forEach((button) => {
@@ -69,21 +37,22 @@ closeButtons.forEach((button) => {
 //функция открытия popup
 function openPopup(popup) {
   popup.classList.add("popup_opened");
-  document.addEventListener('keydown', closePopupEsc);
-  document.addEventListener('click', closeWithinPopup);
-};
+  document.addEventListener("keydown", closePopupEsc);
+  document.addEventListener("click", closeWithinPopup);
+  enableValidation(obj);
+}
 
 //закрытие popup кликом на оверлей
 const closeWithinPopup = (e) => {
-  if (e.target.classList.contains('popup_opened')) {
+  if (e.target.classList.contains("popup_opened")) {
     closePopup(e.target);
   }
 };
 
 //закрытие popup через Esc //не работает зараза
 const closePopupEsc = (e) => {
-;  if (e.keyCode == 27) {
-    const popupAll = document.querySelector('.popup_opened');
+  if (e.keyCode == 27) {
+    const popupAll = document.querySelector(".popup_opened");
     closePopup(popupAll);
   }
 };
@@ -100,17 +69,21 @@ closePopupList.forEach((popupElem) => {
 //функция закрытия popup
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
-  document.removeEventListener('keydown', closePopupEsc);
-  document.removeEventListener('click', closeWithinPopup);
-};
+  document.removeEventListener("keydown", closePopupEsc);
+  document.removeEventListener("click", closeWithinPopup);
+}
 
-function handleFormProfileSubmit(e) { //отправка данных(заполнение профиля пользователя)
+function handleFormProfileSubmit(e) {
+  //отправка данных(заполнение профиля пользователя)
   e.preventDefault();
 
   nameProfileTitle.textContent = nameProfileInput.value;
   jobProfileTitle.textContent = jobProfileInput.value;
   closePopup(popupProfile);
 }
+
+nameProfileInput.value = nameProfileTitle.textContent;
+jobProfileInput.value = jobProfileTitle.textContent;
 
 //функция создания новой карточки
 function createCard(item) {
@@ -171,10 +144,7 @@ formCards.addEventListener("submit", (e) => {
 
 //открытие и редактирование полей попап профиля нажатием на кнопку редактирования
 buttonEdit.addEventListener("click", function () {
-  // popup.classList.add('popup_opened');
   openPopup(popupProfile);
-  nameProfileInput.value = nameProfileTitle.textContent;
-  jobProfileInput.value = jobProfileTitle.textContent;
 });
 
 //открытие попап добавления карточки нажатием на кнопку добавления
