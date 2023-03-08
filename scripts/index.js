@@ -1,4 +1,4 @@
-import { obj, enableValidation } from "./validate.js";
+import { obj, submitForOpenPopup } from "./validate.js";
 
 //переменные
 const popupProfile = document.querySelector(".popup-profile"); //мод.окно профиля
@@ -39,8 +39,7 @@ function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupEsc);
   document.addEventListener("click", closeWithinPopup);
-  enableValidation(obj);
-}
+};
 
 //закрытие popup кликом на оверлей
 const closeWithinPopup = (e) => {
@@ -49,7 +48,7 @@ const closeWithinPopup = (e) => {
   }
 };
 
-//закрытие popup через Esc //не работает зараза
+//закрытие popup через Esc
 const closePopupEsc = (e) => {
   if (e.keyCode == 27) {
     const popupAll = document.querySelector(".popup_opened");
@@ -158,6 +157,7 @@ buttonEdit.addEventListener("click", function () {
 
 //открытие попап добавления карточки нажатием на кнопку добавления
 addButton.addEventListener("click", function () {
+  submitForOpenPopup(obj, formCards);
   openPopup(popupAdd);
 });
 
