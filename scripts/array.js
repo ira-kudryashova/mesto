@@ -25,3 +25,4 @@ const initialCards = [
     link: "https://images.unsplash.com/photo-1583491470869-ca0b9fa90216?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJhbmdrb2t8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
   },
 ];
+  
