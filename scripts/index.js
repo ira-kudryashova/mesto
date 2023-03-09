@@ -1,4 +1,4 @@
-import { obj, submitForOpenPopup } from "./validate.js";
+import { obj, disablesSubmitForm } from "./validate.js";
 
 //переменные
 const popupProfile = document.querySelector(".popup-profile"); //мод.окно профиля
@@ -157,7 +157,7 @@ buttonEdit.addEventListener("click", function () {
 
 //открытие попап добавления карточки нажатием на кнопку добавления
 addButton.addEventListener("click", function () {
-  submitForOpenPopup(obj, formCards);
+  disablesSubmitForm(obj, formCards);
   openPopup(popupAdd);
 });
 

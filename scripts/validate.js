@@ -58,7 +58,7 @@ const toggleButtonState = (object, inputList, buttonElement) => {
 
 
 //Функция проверки формы -> деактивании кнопки и удаления текста ошибки
-const submitForOpenPopup = (object, formElement) => {
+const disablesSubmitForm = (object, formElement) => {
   const inputList = Array.from(formElement.querySelectorAll(object.inputSelector)); // Ищем все инпуты
   const buttonElement = formElement.querySelector(object.submitButtonSelector); // Ищем кнопку
   toggleButtonState(object, inputList, buttonElement); //Включаем проверку для определения статуса кнопки
@@ -105,4 +105,4 @@ const enableValidation = (object) => {
 
 enableValidation(obj);
 
-export { obj, submitForOpenPopup }; //Экспорт в index.js
+export { obj, disablesSubmitForm }; //Экспорт в index.js
