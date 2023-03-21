@@ -9,7 +9,7 @@ class Card {
   /** добавляем классу метод _getTemplate, который: */
   _getTemplate() {
     const cardElement = document
-      .querySelector("#card__template") // найдёт template-элемент с классом card__template
+      .querySelector(this._templateSelector) // найдёт template-элемент (используем селектор, который передаем их index.js при создании карточки. Конструктор становится универсальным для разных template-элементов)
       .content.querySelector(".card") // извлечет его содержимое и в содержимом найдёт элемент с классом card
       .cloneNode(true); // клонирует его
 

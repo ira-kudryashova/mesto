@@ -33,9 +33,9 @@ const nameImageClicked = document.querySelector('.popup-image__title'); // на�
 
 /** данные шаблона */
 const cardsBlock = document.querySelector('.cards'); // секция всех карточек
-const cardTemplate = document.querySelector('#card__template'); // шаблон карточки
-const card = document.querySelector('.card'); // карточка
-const cardImage = document.querySelector('.card__pic'); // изображение
+//const cardTemplate = document.querySelector('#card__template'); // шаблон карточки
+//const card = document.querySelector('.card'); // карточка
+//const cardImage = document.querySelector('.card__pic'); // изображение
 
 /** закрытие модальных окон */
 const closeButtons = document.querySelectorAll('.popup__close'); // все кнопки закрытия модалок
@@ -53,7 +53,7 @@ const closeWithinPopup = (e) => {
 
 /** закрытие модальных окон через Esc */
 const closePopupEsc = (e) => {
-  if (e.keyCode == 27) {
+  if (e.keyCode === 'Escape') {
     const popupAll = document.querySelector('.popup_opened');
     closePopup(popupAll);
   }
@@ -94,7 +94,7 @@ function viewPopupImagePic(name, link) {
 
 /** создание новой карточки */
 function createCard(data) {
-  const card = new Card(data, cardTemplate, viewPopupImagePic);
+  const card = new Card(data, '#card__template', viewPopupImagePic);
   return card.generateCard();
 }
 
@@ -131,26 +131,26 @@ function handleFormProfileSubmit(e) {
 /** сохранение(отправка) даных карточки (внесение названия и ссылки на изображение) */
 function handleFormAddSubmit(e) {
   e.preventDefault();
-  formCards.addEventListener('submit', (e) => {
-    e.preventDefault();
 
-    const addCard = {
-      name: nameImageAdd.value,
-      link: linkImageAdd.value,
-    };
+  const addCard = {
+    name: nameImageAdd.value,
+    link: linkImageAdd.value,
+  };
 
-    addNewCard(createCard(addCard));
+  addNewCard(createCard(addCard));
 
-    /** закрытие окна после сохранения и очистка инпутов*/
-    closePopup(popupAdd, clearInput(e));
-  });
+  /** закрытие окна после сохранения и очистка инпутов*/
+  closePopup(popupAdd, clearInput(e));
 }
 
-nameProfileInput.value = nameProfileTitle.textContent;
-jobProfileInput.value = jobProfileTitle.textContent;
+// nameProfileInput.value = nameProfileTitle.textContent;
+// jobProfileInput.value = jobProfileTitle.textContent;
 
 /** открытие и редактирование полей попап профиля нажатием на кнопку редактирования */
 buttonEdit.addEventListener('click', function () {
+  nameProfileInput.value = nameProfileTitle.textContent;
+  jobProfileInput.value = jobProfileTitle.textContent;
+  
   openPopup(popupProfile);
 });
 
