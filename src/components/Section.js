@@ -1,9 +1,10 @@
 /** Section отвечает за отрисовку элементов на странице, у него нет своей разметки. Он получает разметку через функцию-колбэк и вставляет её в контейнер. */
 class Section {
-  constructor({ items, renderer }, containerSelector) {
+  constructor({ items, renderer }, container) {
     this._items = items; //массив данных, которые нужно добавить на страницу
     this._renderer = renderer; //функция, которая отвечает за создание и отрисовку данных на странице
-    this._container = containerSelector; //сюда добавляются созданные элементы
+    //this._container = document.querySelector(containerSelector); //сюда добавляются созданные элементы
+    this._container = container; //сюда добавляются созданные элементы
   }
 
   renderItems() {

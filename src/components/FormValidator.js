@@ -68,15 +68,6 @@ class FormValidator {
   }
 
   /** функция проверки формы -> деактивация кнопки и удаление текста ошибки */
-
-  // _disablesSubmitForm(object, formElement) {
-  //   const inputList = Array.from(formElement.querySelectorAll(this._inputSelector)); // Ищем все инпуты
-  //   const buttonElement = formElement.querySelector(this._submitButtonSelector); // Ищем кнопку
-  //   toggleButtonState(object, inputList, buttonElement); //Включаем проверку для определения статуса кнопки
-  //   inputList.forEach(inputElement => { //Каждому инпуту включаем обработчик скрытия ошибки (ps инпуты при повторном открытии попап добавления картинки очищаются после сабмита)
-  //     hideInputError(object, formElement, inputElement);
-  //   });
-  // };
   disablesSubmitForm() {
     this._inputList.forEach((inputElement) => {
       this._inputElement = inputElement;
