@@ -6,7 +6,7 @@
     bottom: 100%;
     align-self: flex-end;
     transform: translate(8px, -8px);
-    background: url('../../..//images/close-button.svg');
+    background: url('../../../images/close-button.svg');
     background-size: cover;
     border: none;
     cursor: pointer;

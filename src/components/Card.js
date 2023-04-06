@@ -10,7 +10,7 @@ class Card {
   _getTemplate() {
     const cardElement = document
       .querySelector(this._templateSelector) // найдёт template-элемент (используем селектор, который передаем их index.js при создании карточки. Конструктор становится универсальным для разных template-элементов)
-      .content.querySelector(".card") // извлечет его содержимое и в содержимом найдёт элемент с классом card
+      .content.querySelector('.card') // извлечет его содержимое и в содержимом найдёт элемент с классом card
       .cloneNode(true); // клонирует его
 
     return cardElement; // вернёт клонированный элемент
@@ -21,10 +21,10 @@ class Card {
     this._element = this._getTemplate(); // запишем в разметку приватное поле _cardElement (у др.элементов появится доступ к ней)
 
     /** добавим данные */
-    this._elementImage = this._element.querySelector(".card__pic");
-    this._elementName = this._element.querySelector(".card__name");
-    this._elementLike = this._element.querySelector(".card__like");
-    this._elementTrash = this._element.querySelector(".card__trash");
+    this._elementImage = this._element.querySelector('.card__pic');
+    this._elementName = this._element.querySelector('.card__name');
+    this._elementLike = this._element.querySelector('.card__like');
+    this._elementTrash = this._element.querySelector('.card__trash');
 
     this._setEventListeners();
 
@@ -37,7 +37,7 @@ class Card {
 
   /** лайк карточки */
   _like() {
-    this._elementLike.classList.toggle("card__like_active");
+    this._elementLike.classList.toggle('card__like_active');
   }
 
   /** удаление карточки */
@@ -48,12 +48,12 @@ class Card {
 
   /** метод добавления всех обработчиков в одном месте*/
   _setEventListeners() {
-    this._elementImage.addEventListener("click", () => {
+    this._elementImage.addEventListener('click', () => {
       this._viewPopupImage(this._name, this._link);
     });
 
-    this._elementLike.addEventListener("click", () => this._like());
-    this._elementTrash.addEventListener("click", () => this._trash());
+    this._elementLike.addEventListener('click', () => this._like());
+    this._elementTrash.addEventListener('click', () => this._trash());
   }
 }
 

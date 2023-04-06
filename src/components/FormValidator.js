@@ -15,7 +15,9 @@ class FormValidator {
 
   /** функция, которая добавляет класс с ошибкой */
   _showInputError() {
-    const errorElement = this._formElement.querySelector(`.${this._inputElement.id}-error`); // находим элемент ошибки внутри самой функции
+    const errorElement = this._formElement.querySelector(
+      `.${this._inputElement.id}-error`
+    ); // находим элемент ошибки внутри самой функции
     this._inputElement.classList.add(this._inputErrorClass);
     errorElement.textContent = this._inputElement.validationMessage; // показываем сообщение об ошибке
     errorElement.classList.add(this._errorClass); // замена содержимого span с ошибкой на переданный параметр
@@ -23,7 +25,9 @@ class FormValidator {
 
   /** функция, которая удаляет класс с ошибкой */
   _hideInputError() {
-    const errorElement = this._formElement.querySelector(`.${this._inputElement.id}-error`); // находим элемент ошибки
+    const errorElement = this._formElement.querySelector(
+      `.${this._inputElement.id}-error`
+    ); // находим элемент ошибки
     this._inputElement.classList.remove(this._inputErrorClass);
     errorElement.classList.add(this._errorClass); //
     errorElement.textContent = ''; // cкрываем сообщение об ошибке
@@ -58,11 +62,13 @@ class FormValidator {
       });
     });
 
-    this._buttonElement = this._formElement.querySelector(this._submitButtonSelector);
+    this._buttonElement = this._formElement.querySelector(
+      this._submitButtonSelector
+    );
   }
 
   /** функция проверки формы -> деактивация кнопки и удаление текста ошибки */
-  
+
   // _disablesSubmitForm(object, formElement) {
   //   const inputList = Array.from(formElement.querySelectorAll(this._inputSelector)); // Ищем все инпуты
   //   const buttonElement = formElement.querySelector(this._submitButtonSelector); // Ищем кнопку
