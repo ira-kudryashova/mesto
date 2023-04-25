@@ -52,6 +52,7 @@ class Card {
     this._element = null;
   }
 
+  /** состояние лайка в зависимости от того активна его иконка или нет */
   _changeLikeState() {
     if (this._elementLike.classList.contains("card__like_active")) {
       this._handleRemoveLike(this._id);
@@ -67,7 +68,6 @@ class Card {
     }
   }
 
-  /** проверяем чей лайк на карточке */
   _isCardLiked() {
     if (
       this._likes.some((user) => {
@@ -104,10 +104,12 @@ class Card {
     this._elementTrash = this._element.querySelector(".card__trash");
     this._likesCounter = this._element.querySelector(".card__like_number");
 
+    /** навешиваем обработчики */
     this._setEventListeners();
     this._checkUserDeleteState();
     this._isCardLiked();
 
+    /** передаем данные в карточку */
     this._elementImage.src = this._link;
     this._elementImage.alt = this._link;
     this._elementName.textContent = this._name;

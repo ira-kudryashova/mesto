@@ -15,7 +15,7 @@ class PopupWithForm extends Popup {
   _getInputValues() {
     this._formInputValues = {}; //создали пустой объект
 
-    this._inputList.forEach((input) => { //добавили в объект значения всех полей
+    this._inputList.forEach((input) => { //наполнили объект значениями всех полей через forEach
       this._formInputValues[input.name] = input.value;
     });
     return this._formInputValues;//вернули заполненный объект
@@ -26,6 +26,7 @@ class PopupWithForm extends Popup {
     this._form.reset();
   }
 
+  /** связываем с  _getInputValues*/
   setEventListeners() {
     super.setEventListeners(); //перезаписывает родительский метода
 
