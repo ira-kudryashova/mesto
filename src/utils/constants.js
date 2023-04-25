@@ -45,10 +45,13 @@ const popupImage = document.querySelector(".popup-image"); //мод.окно к�
 /** кнопки открытия модальных окон */
 const buttonEdit = document.querySelector(".profile__edit-button"); //кнопка открытия модалки редактирования профиля
 const addButton = document.querySelector(".profile__add-button"); //кнопка открытия модалки добавления карточки
+const editAvatarBtn = document.querySelector('.profile__avatar_edit'); //кнопка открытия модалки редактирования аватара
+const submitBtn = document.querySelector('.form__submit-button_profile');
 
 /** формы модальных окон */
 const formCards = document.querySelector(".form-cards"); // форма модалки добавления карточек
 const formProfile = document.querySelector(".form-profile"); // форма модалки редактиования профиля
+const formAvatar = document.querySelector('.form-avatar'); //форма модалки изменения аватара пользователя
 
 /** данные модального окна профиля и его инпуты */
 const nameProfileInput = document.querySelector(".form__item_user_name"); //поле ввода имени пользователя
@@ -69,6 +72,8 @@ const cardsBlock = document.querySelector(".cards"); // секция всех к
 //const cardTemplate = document.querySelector('#card__template'); // шаблон карточки
 //const card = document.querySelector('.card'); // карточка
 //const cardImage = document.querySelector('.card__pic'); // изображение
+const likeNumber = document.querySelector('.card__like_number'); //для счетчика лайков
+const likeButton = document.querySelector('.card__like'); //кнопка лайка
 
 
 export {
@@ -80,5 +85,7 @@ export {
   formProfile,
   nameProfileInput,
   jobProfileInput,
-  cardsBlock
+  cardsBlock,
+  editAvatarBtn,
+  formAvatar
 }

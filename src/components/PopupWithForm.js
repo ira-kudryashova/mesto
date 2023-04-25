@@ -7,14 +7,18 @@ class PopupWithForm extends Popup {
     this._handleFormSubmit = handleFormSubmit;
     this._form = document.querySelector(popupSelector).querySelector('.form');
     this._inputList = Array.from(this._form.querySelectorAll('.form__item'));
+    this._submitButton = this._form.querySelector('.form__submit-button');
+    this._submitButtonText = this._submitButton.textContent;
   }
 
-  _getInputValues() { //метод собирает данные всех полей формы
-    this._formInputValues = {};
-    this._inputList.forEach((input) => {
+  /** метод собирает данные всех полей формы */
+  _getInputValues() {
+    this._formInputValues = {}; //создали пустой объект
+
+    this._inputList.forEach((input) => { //добавили в объект значения всех полей
       this._formInputValues[input.name] = input.value;
     });
-    return this._formInputValues;
+    return this._formInputValues;//вернули заполненный объект
   }
 
   close() {
@@ -27,10 +31,21 @@ class PopupWithForm extends Popup {
 
     this._form.addEventListener('submit', (e) => { //добавляет обработчик сабмита форме
       e.preventDefault();
-      this._handleFormSubmit(this._getInputValues());
+      this._handleFormSubmit(this._getInputValues()); //передали в функцию объект (результат работы _getInputValues)
       this.close();
     });
   }
+
+  /** показываем ход загрузки/сохранения */
+  renderLoading(isLoading, submitButtonText) {
+    if(isLoading) {
+      this._submitButton.textContent = submitButtonText;
+      this._submitButton.disabled = true;
+    } else {
+      this._submitButton.textContent = submitButtonText;
+      this._submitButton.disabled = false;
+    }
+ }
 }
 
 export { PopupWithForm };
