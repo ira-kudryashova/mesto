@@ -4,14 +4,14 @@ import
 {
   initialCards,
   obj,
-  buttonEdit,
-  addButton,
+  editProfileButton,
+  addCardButton,
   formCards,
   formProfile,
   nameProfileInput,
   jobProfileInput,
   cardsBlock,
-  editAvatarBtn,
+  editAvatarButton,
   formAvatar
 } from './utils/constants.js';
 
@@ -46,6 +46,10 @@ Promise.all([api.getUserInfoApi(), api.getInitialCards()])
 const popupViewImage = new PopupWithImage('.popup-image')
 popupViewImage.setEventListeners();
 
+function viewPopupImagePic(name, link) { //открытие попап просмотра изображения
+  popupViewImage.open(name, link);
+}
+
 /** попап подтверждения удаления карточки */
 const popupConfirm = new PopupConfirmation('.popup-delete')
 popupConfirm.setEventListeners();
@@ -78,23 +82,24 @@ const popupProfile = new PopupWithForm('.popup-profile', (inputs) => {
 });
 popupProfile.setEventListeners();
 
-buttonEdit.addEventListener('click', () => {
-  // const userInfo = user.getUserInfo();
-  // inputsProfileInfo({
-  //   name: userInfo.name,
-  //   job: userInfo.job
-  // });
-  //popupProfile.open();
-  popupProfileOpen(user.getUserInfo());
+editProfileButton.addEventListener('click', () => { //открытие попап профиля
+  const userInfoProfile = user.getUserInfo();
+  inputsProfileInfo({
+    name: userInfoProfile.name,
+    job: userInfoProfile.job
+  });
+  popupProfile.open();
   profileValidation.disablesSubmitForm();
+  // popupProfileOpen(user.getUserInfo());
+  // profileValidation.disablesSubmitForm();
 })
 
-function popupProfileOpen({ name, job }) {
-  nameProfileInput.value = name;
-  jobProfileInput.value = job;
+// function popupProfileOpen({ name, job }) {
+//   nameProfileInput.value = name;
+//   jobProfileInput.value = job;
 
-  popupProfile.open();
-}
+//   popupProfile.open();
+// }
 
 // buttonEdit.addEventListener('click', () => {
 //   popupProfileOpen(user.getUserInfo());
@@ -118,7 +123,7 @@ const popupAvatar = new PopupWithForm('.popup-avatar', (data) => {
 })
 popupAvatar.setEventListeners();
 
-editAvatarBtn.addEventListener('click', () => { //для открытия попап аватара
+editAvatarButton.addEventListener('click', () => { //для открытия попап аватара
   popupAvatar.open();
 })
 
@@ -192,14 +197,10 @@ const popupAdd = new PopupWithForm('.popup-add', (data) => {
 })
 popupAdd.setEventListeners();
 
-addButton.addEventListener('click', () => { //для открытия попап добавления карточоки
+addCardButton.addEventListener('click', () => { //для открытия попап добавления карточоки
   popupAdd.open();
   formCardValidation.disablesSubmitForm();
 })
-
-function viewPopupImagePic(name, link) {
-  popupViewImage.open(name, link);
-}
 
 /** валидация форм */
 const profileValidation = new FormValidator(obj, formProfile);

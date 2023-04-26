@@ -43,9 +43,9 @@ const popup = document.querySelector(".popup");
 const popupImage = document.querySelector(".popup-image"); //мод.окно картинки
 
 /** кнопки открытия модальных окон */
-const buttonEdit = document.querySelector(".profile__edit-button"); //кнопка открытия модалки редактирования профиля
-const addButton = document.querySelector(".profile__add-button"); //кнопка открытия модалки добавления карточки
-const editAvatarBtn = document.querySelector('.profile__avatar_edit'); //кнопка открытия модалки редактирования аватара
+const editProfileButton = document.querySelector(".profile__edit-button"); //кнопка открытия модалки редактирования профиля
+const addCardButton = document.querySelector(".profile__add-button"); //кнопка открытия модалки добавления карточки
+const editAvatarButton = document.querySelector('.profile__avatar_edit'); //кнопка открытия модалки редактирования аватара
 const submitBtn = document.querySelector('.form__submit-button_profile');
 
 /** формы модальных окон */
@@ -72,20 +72,20 @@ const cardsBlock = document.querySelector(".cards"); // секция всех к
 //const cardTemplate = document.querySelector('#card__template'); // шаблон карточки
 //const card = document.querySelector('.card'); // карточка
 //const cardImage = document.querySelector('.card__pic'); // изображение
-const likeNumber = document.querySelector('.card__like_number'); //для счетчика лайков
+const likeNumber = document.querySelector('.card__like-number'); //для счетчика лайков
 const likeButton = document.querySelector('.card__like'); //кнопка лайка
 
 
 export {
   initialCards,
   obj,
-  buttonEdit,
-  addButton,
+  editProfileButton,
+  addCardButton,
   formCards,
   formProfile,
   nameProfileInput,
   jobProfileInput,
   cardsBlock,
-  editAvatarBtn,
+  editAvatarButton,
   formAvatar
 }

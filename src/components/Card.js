@@ -102,7 +102,7 @@ class Card {
     this._elementName = this._element.querySelector(".card__name");
     this._elementLike = this._element.querySelector(".card__like");
     this._elementTrash = this._element.querySelector(".card__trash");
-    this._likesCounter = this._element.querySelector(".card__like_number");
+    this._likesCounter = this._element.querySelector(".card__like-number");
 
     /** навешиваем обработчики */
     this._setEventListeners();

@@ -35,7 +35,7 @@ class Api {
   
     //обновим аватар пользователя
     editUserAvatar(data) {
-      return fetch(`${this._url}/users/me/avatar`, {
+      return fetch(`${this._url}/users/me/avatar`, { //не сохраняется новый аватар - ошибка от сервера 400
         method: "PATCH",
         headers: this._headers,
         body: JSON.stringify({
