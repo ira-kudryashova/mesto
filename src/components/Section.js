@@ -8,8 +8,10 @@ class Section {
 
   renderItems(items) {
     //метод, отвечающий за отрисовку всех элементов функцией renderer
-    items.forEach(item => {this._renderer(item)});
-  };
+    items.forEach((item) => {
+      this._renderer(item);
+    });
+  }
 
   addItem(element) {
     //публичный метод, который принимат DOM-элемент и добавляет в начало контейнера

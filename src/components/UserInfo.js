@@ -9,15 +9,17 @@ class UserInfo {
   getUserInfo() {
     // this._userName.value = document.querySelector('.profile__name');
     // this._userJob.value = document.querySelector('.profile__job')
-    
-    return { //метод возвращает объект с данными пользователя
+
+    return {
+      //метод возвращает объект с данными пользователя
       name: this._userName.textContent,
       job: this._userJob.textContent,
-      avatar: this._avatar.src
+      avatar: this._avatar.src,
     };
   }
 
-  setUserInfo(data) { //метод принимает новые данные пользователя и добавляет их на страницу
+  setUserInfo(data) {
+    //метод принимает новые данные пользователя и добавляет их на страницу
     this._userName.textContent = data.name;
     this._userJob.textContent = data.about;
     this._avatar.src = data.avatar;

@@ -15,10 +15,11 @@ class PopupWithForm extends Popup {
   _getInputValues() {
     this._formInputValues = {}; //создали пустой объект
 
-    this._inputList.forEach((input) => { //наполнили объект значениями всех полей через forEach
+    this._inputList.forEach((input) => {
+      //наполнили объект значениями всех полей через forEach
       this._formInputValues[input.name] = input.value;
     });
-    return this._formInputValues;//вернули заполненный объект
+    return this._formInputValues; //вернули заполненный объект
   }
 
   close() {
@@ -30,7 +31,8 @@ class PopupWithForm extends Popup {
   setEventListeners() {
     super.setEventListeners(); //перезаписывает родительский метода
 
-    this._form.addEventListener('submit', (e) => { //добавляет обработчик сабмита форме
+    this._form.addEventListener('submit', (e) => {
+      //добавляет обработчик сабмита форме
       e.preventDefault();
       this._handleFormSubmit(this._getInputValues()); //передали в функцию объект (результат работы _getInputValues)
       this.close();
@@ -39,14 +41,14 @@ class PopupWithForm extends Popup {
 
   /** показываем ход загрузки/сохранения */
   renderLoading(isLoading, submitButtonText) {
-    if(isLoading) {
+    if (isLoading) {
       this._submitButton.textContent = submitButtonText;
       this._submitButton.disabled = true;
     } else {
       this._submitButton.textContent = submitButtonText;
       this._submitButton.disabled = false;
     }
- }
+  }
 }
 
 export { PopupWithForm };

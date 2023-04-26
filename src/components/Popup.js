@@ -1,6 +1,7 @@
 /** класс, отвечающий за открытие и закрытие попапа */
 class Popup {
-  constructor(popupSelector) { //принимает параметром - селектор класса
+  constructor(popupSelector) {
+    //принимает параметром - селектор класса
     this._popup = document.querySelector(popupSelector);
   }
 
@@ -40,9 +41,12 @@ class Popup {
     //   });
     // });
     this._popup.addEventListener('click', (e) => {
-        if (e.target.classList.contains('popup') || e.target.classList.contains('popup__close')) {
-            this.close(this._popup);
-        }
+      if (
+        e.target.classList.contains('popup') ||
+        e.target.classList.contains('popup__close')
+      ) {
+        this.close(this._popup);
+      }
     });
   }
 }

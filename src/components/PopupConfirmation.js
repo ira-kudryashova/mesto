@@ -1,9 +1,9 @@
-import { Popup } from "./Popup.js";
+import { Popup } from './Popup.js';
 
 class PopupConfirmation extends Popup {
   constructor(popupSelector) {
     super(popupSelector);
-    this._form = this._popup.querySelector(".form");
+    this._form = this._popup.querySelector('.form');
     this._submitButton = this._form.querySelector('.form__submit-button');
     this._submitButtonText = this._submitButton.textContent;
   }
@@ -16,7 +16,7 @@ class PopupConfirmation extends Popup {
   setEventListeners() {
     super.setEventListeners();
 
-    this._form.addEventListener("submit", (e) => {
+    this._form.addEventListener('submit', (e) => {
       e.preventDefault();
       this._handleSubmit();
     });

@@ -7,8 +7,9 @@ class Card {
       handleCardDelete,
       handleCardLike,
       handleRemoveLike,
-    }, templateSelector) {
-      
+    },
+    templateSelector
+  ) {
     this._name = data.name;
     this._link = data.link;
     this._id = data._id;
@@ -29,7 +30,7 @@ class Card {
   _getTemplate() {
     const cardElement = document
       .querySelector(this._templateSelector) // найдёт template-элемент (используем селектор, который передаем их index.js при создании карточки. Конструктор становится универсальным для разных template-элементов)
-      .content.querySelector(".card") // извлечет его содержимое и в содержимом найдёт элемент с классом card
+      .content.querySelector('.card') // извлечет его содержимое и в содержимом найдёт элемент с классом card
       .cloneNode(true); // клонирует его
 
     return cardElement; // вернёт клонированный элемент
@@ -42,7 +43,7 @@ class Card {
   /** лайк карточки */
   cardLiked(data) {
     this._likes = data.likes;
-    this._elementLike.classList.toggle("card__like_active");
+    this._elementLike.classList.toggle('card__like_active');
     this._likesCounter.textContent = this._likes.length;
   }
 
@@ -54,7 +55,7 @@ class Card {
 
   /** состояние лайка в зависимости от того активна его иконка или нет */
   _changeLikeState() {
-    if (this._elementLike.classList.contains("card__like_active")) {
+    if (this._elementLike.classList.contains('card__like_active')) {
       this._handleRemoveLike(this._id);
     } else {
       this._handleCardLike(this._id);
@@ -74,21 +75,21 @@ class Card {
         return this._userId === user._id;
       })
     ) {
-      this._elementLike.classList.add("card__like_active");
+      this._elementLike.classList.add('card__like_active');
     }
   }
 
   /** метод добавления всех обработчиков в одном месте*/
   _setEventListeners() {
-    this._elementImage.addEventListener("click", () => {
+    this._elementImage.addEventListener('click', () => {
       this._viewPopupImage();
     });
 
-    this._elementLike.addEventListener("click", () => {
+    this._elementLike.addEventListener('click', () => {
       this._changeLikeState();
     });
 
-    this._elementTrash.addEventListener("click", () => {
+    this._elementTrash.addEventListener('click', () => {
       this._handleCardDelete();
     });
   }
@@ -98,11 +99,11 @@ class Card {
     this._element = this._getTemplate(); // запишем в разметку приватное поле _cardElement (у др.элементов появится доступ к ней)
 
     /** добавим данные */
-    this._elementImage = this._element.querySelector(".card__pic");
-    this._elementName = this._element.querySelector(".card__name");
-    this._elementLike = this._element.querySelector(".card__like");
-    this._elementTrash = this._element.querySelector(".card__trash");
-    this._likesCounter = this._element.querySelector(".card__like-number");
+    this._elementImage = this._element.querySelector('.card__pic');
+    this._elementName = this._element.querySelector('.card__name');
+    this._elementLike = this._element.querySelector('.card__like');
+    this._elementTrash = this._element.querySelector('.card__trash');
+    this._likesCounter = this._element.querySelector('.card__like-number');
 
     /** навешиваем обработчики */
     this._setEventListeners();

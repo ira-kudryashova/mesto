@@ -82,7 +82,7 @@
                     <button class="popup__close" type="button" aria-label="Кнопка закрытия формы"></button>
                     <h2 class="form__name">Обновить аватар</h2>
                         <fieldset class="form__input-container">
-                            <input type="url" name="link" id="link-input" class="form__item form__item_avatar_link" placeholder="Ссылка на картинку" required>
+                            <input type="url" name="link" id="link-avatar-input" class="form__item form__item_avatar_link" placeholder="Ссылка на картинку" required>
                             <span class="form__item-error link-input-error"></span>
                         </fieldset>   
                     <button class="form__submit-button" type="submit"  aria-label="Кнопка сохранения" disabled>Сохранить</button>
@@ -101,22 +101,21 @@
         </div>
     </div>
          
-    </div>
-    
-        <template id="card__template">
-            <article class="card">
-                <div class="card__image">
-                    <img class="card__pic" src="#" alt="Фотография пользователя">
-                    <button class="card__trash" type="button" aria-label="Значок удаления карточки"></button>
+    <template id="card__template">
+        <article class="card">
+            <div class="card__image">
+                 <img class="card__pic" src="#" alt="Фотография пользователя">
+                <button class="card__trash" type="button" aria-label="Значок удаления карточки"></button>
+            </div>
+            <div class="card__description">
+                <h2 class="card__name"></h2>
+                <div class="card__like-container">
+                    <button class="card__like" type="button" aria-label="Значок лайк"></button>
+                    <span class="card__like-number"></span>
                 </div>
-                <div class="card__description">
-                    <h2 class="card__name"></h2>
-                    <div class="card__like-container">
-                        <button class="card__like" type="button" aria-label="Значок лайк"></button>
-                        <span class="card__like-number"></span>
-                </div>
-            </article>
-        </template>
+            </div>
+        </article>
+    </template>
 
     <!-- <script src="../src/components/arrays.js" type="module"></script>
     <script src="../src/components/FormValidator.js" type="module"></script>
