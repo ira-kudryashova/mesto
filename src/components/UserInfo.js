@@ -19,7 +19,7 @@ class UserInfo {
 
   setUserInfo(data) { //метод принимает новые данные пользователя и добавляет их на страницу
     this._userName.textContent = data.name;
-    this._userJob.textContent = data.job;
+    this._userJob.textContent = data.about;
     this._avatar.src = data.avatar;
     this._avatar.alt = data.name;
     this._id = data._id;

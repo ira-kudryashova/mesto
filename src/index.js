@@ -68,7 +68,6 @@ const popupProfile = new PopupWithForm('.popup-profile', (inputs) => {
  popupProfile.renderLoading(true, 'Сохраняем...')
  api.editUserInfo(inputs)
   .then((inputs) => {
-    //console.log(inputs); не отображает поле "о себе" (и не отображает его редактирование)
     user.setUserInfo(inputs);
     popupProfile.close();
     console.log(inputs)
@@ -111,7 +110,7 @@ const popupAvatar = new PopupWithForm('.popup-avatar', (data) => {
   popupAvatar.renderLoading(true, 'Сохраняем...');
   api.editUserAvatar(data)
     .then((data) => {
-      avatar.src = data.avatar;
+      user.setUserInfo(data);
       popupAvatar.close();
     })
     .catch((err) => {
@@ -137,8 +136,9 @@ const createCard = (data) => {
     },
     handleCardDelete: () => {
       popupConfirm.open();
-      // popupConfirm.renderLoading(true, 'Удаляем...');
+      popupConfirm.setEventListeners();
       popupConfirm.setSubmit(() => {
+        popupConfirm.renderLoading(true, 'Удаляем...');
         api.removeCardApi(card.getId())
           .then(() => {
             card.removeCard();
@@ -147,9 +147,9 @@ const createCard = (data) => {
           .catch((err) => {
             console.log(err)
           })
-          // .finally(() => {
-          //   popupConfirm.renderLoading(false, 'Да');
-          // })
+          .finally(() => {
+            popupConfirm.renderLoading(false, 'Да');
+          })
       })
     },
     handleCardLike: () => {
