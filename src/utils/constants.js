@@ -47,7 +47,7 @@ const popupImage = document.querySelector('.popup-image'); //мод.окно к�
 /** кнопки открытия модальных окон */
 const editProfileButton = document.querySelector('.profile__edit-button'); //кнопка открытия модалки редактирования профиля
 const addCardButton = document.querySelector('.profile__add-button'); //кнопка открытия модалки добавления карточки
-const editAvatarButton = document.querySelector('.profile__avatar_edit'); //кнопка открытия модалки редактирования аватара
+const editAvatarButton = document.querySelector('.profile__avatar-edit'); //кнопка открытия модалки редактирования аватара
 const submitBtn = document.querySelector('.form__submit-button_profile');
 
 /** формы модальных окон */
