@@ -2,18 +2,15 @@
 class UserInfo {
   constructor({ nameSelector, jobSelector, avatarSelector }) {
     this._userName = document.querySelector(nameSelector);
-    this._userJob = document.querySelector(jobSelector);
+    this._userAboutInfo = document.querySelector(jobSelector);
     this._avatar = document.querySelector(avatarSelector);
   }
 
   getUserInfo() {
-    // this._userName.value = document.querySelector('.profile__name');
-    // this._userJob.value = document.querySelector('.profile__job')
-
-    return {
+      return {
       //метод возвращает объект с данными пользователя
       name: this._userName.textContent,
-      job: this._userJob.textContent,
+      job: this._userAboutInfo.textContent,
       avatar: this._avatar.src,
     };
   }
@@ -21,7 +18,7 @@ class UserInfo {
   setUserInfo(data) {
     //метод принимает новые данные пользователя и добавляет их на страницу
     this._userName.textContent = data.name;
-    this._userJob.textContent = data.about;
+    this._userAboutInfo.textContent = data.about;
     this._avatar.src = data.avatar;
     this._avatar.alt = data.name;
     this._id = data._id;

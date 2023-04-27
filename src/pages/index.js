@@ -1,4 +1,4 @@
-import '../src/pages/index.css';
+import '../pages/index.css';
 
 import {
   initialCards,
@@ -12,16 +12,16 @@ import {
   cardsBlock,
   editAvatarButton,
   formAvatar,
-} from './utils/constants.js';
+} from '../utils/constants.js';
 
-import { Card } from './components/Card.js';
-import { FormValidator } from './components/FormValidator.js';
-import { Section } from './components/Section.js';
-import { PopupWithForm } from './components/PopupWithForm.js';
-import { PopupWithImage } from './components/PopupWithImage.js';
-import { UserInfo } from './components/UserInfo.js';
-import { PopupConfirmation } from './components/PopupConfirmation.js';
-import { Api } from './components/Api.js';
+import { Card } from '../components/Card.js';
+import { FormValidator } from '../components/FormValidator.js';
+import { Section } from '../components/Section.js';
+import { PopupWithForm } from '../components/PopupWithForm.js';
+import { PopupWithImage } from '../components/PopupWithImage.js';
+import { UserInfo } from '../components/UserInfo.js';
+import { PopupConfirmation } from '../components/PopupConfirmation.js';
+import { Api } from '../components/Api.js';
 
 /** экз класса Api */
 const api = new Api({
@@ -95,21 +95,7 @@ editProfileButton.addEventListener('click', () => {
   });
   popupProfile.open();
   profileValidation.disablesSubmitForm();
-  // popupProfileOpen(user.getUserInfo());
-  // profileValidation.disablesSubmitForm();
 });
-
-// function popupProfileOpen({ name, job }) {
-//   nameProfileInput.value = name;
-//   jobProfileInput.value = job;
-
-//   popupProfile.open();
-// }
-
-// buttonEdit.addEventListener('click', () => {
-//   popupProfileOpen(user.getUserInfo());
-//   profileValidation.disablesSubmitForm();
-// })
 
 /** попап редактирования аватара пользователя */
 const popupAvatar = new PopupWithForm('.popup-avatar', (data) => {
@@ -145,7 +131,6 @@ const createCard = (data) => {
       },
       handleCardDelete: () => {
         popupConfirm.open();
-        //popupConfirm.setEventListeners();
         popupConfirm.setSubmit(() => {
           popupConfirm.renderLoading(true, 'Удаляем...');
           api
@@ -197,8 +182,6 @@ const cardsList = new Section(
   },
   cardsBlock
 );
-
-//cardsList.renderItems();
 
 /** попап добавления карточки */
 const popupAdd = new PopupWithForm('.popup-add', (data) => {
