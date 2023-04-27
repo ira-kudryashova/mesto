@@ -55,9 +55,9 @@ const popupConfirm = new PopupConfirmation('.popup-delete');
 popupConfirm.setEventListeners();
 
 /** для записи и нформации в инпуты профиля */
-function inputsProfileInfo({ name, job }) {
-  nameProfileInput.value = name;
-  jobProfileInput.value = job;
+function inputsProfileInfo(data) {
+  nameProfileInput.value = data.name;
+  jobProfileInput.value = data.job;
 }
 
 /** экземпляр класса UserInfo, который отвечает за управление отображением информации о пользователе на странице */
@@ -145,7 +145,7 @@ const createCard = (data) => {
       },
       handleCardDelete: () => {
         popupConfirm.open();
-        popupConfirm.setEventListeners();
+        //popupConfirm.setEventListeners();
         popupConfirm.setSubmit(() => {
           popupConfirm.renderLoading(true, 'Удаляем...');
           api

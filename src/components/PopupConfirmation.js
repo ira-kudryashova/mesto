@@ -3,6 +3,7 @@ import { Popup } from './Popup.js';
 class PopupConfirmation extends Popup {
   constructor(popupSelector) {
     super(popupSelector);
+
     this._form = this._popup.querySelector('.form');
     this._submitButton = this._form.querySelector('.form__submit-button');
     this._submitButtonText = this._submitButton.textContent;

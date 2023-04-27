@@ -4,16 +4,19 @@ class Api {
     this._headers = config.headers;
   }
 
+  //проверка
+  _getResponseData(res) {
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Ошибка: ${res.status}`);
+  }
+
   //получим информацию о пользователе
   getUserInfoApi() {
     return fetch(`${this._url}/users/me`, {
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    }).then(this._getResponseData)
   }
 
   //обновим информацию пользователя
@@ -25,41 +28,26 @@ class Api {
         name: data.name,
         about: data.job,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    }).then(this._getResponseData)
   }
 
   //обновим аватар пользователя
   editUserAvatar(data) {
     return fetch(`${this._url}/users/me/avatar`, {
       //не сохраняется новый аватар - ошибка от сервера 400
-      method: 'PUT',
+      method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
         avatar: data.link,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    }).then(this._getResponseData)
   }
 
   //получим карточки
   getInitialCards() {
     return fetch(`${this._url}/cards`, {
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    }).then(this._getResponseData)
   }
 
   //добавим новую карточку
@@ -71,12 +59,7 @@ class Api {
         name: data.name,
         link: data.link,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    }).then(this._getResponseData)
   }
 
   //удалим карточку
@@ -84,12 +67,7 @@ class Api {
     return fetch(`${this._url}/cards/${_id}`, {
       method: 'DELETE',
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    }).then(this._getResponseData)
   }
 
   // поставим лайк карточке
@@ -97,12 +75,7 @@ class Api {
     return fetch(`${this._url}/cards/${_id}/likes`, {
       method: 'PUT',
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    }).then(this._getResponseData)
   }
 
   // удалим лайк с карточки
@@ -110,12 +83,7 @@ class Api {
     return fetch(`${this._url}/cards/${_id}/likes`, {
       method: 'DELETE',
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    }).then(this._getResponseData)
   }
 
   // toggleLikeCard(cardId, isCardLiked) {

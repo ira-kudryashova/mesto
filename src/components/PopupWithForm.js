@@ -35,7 +35,7 @@ class PopupWithForm extends Popup {
       //добавляет обработчик сабмита форме
       e.preventDefault();
       this._handleFormSubmit(this._getInputValues()); //передали в функцию объект (результат работы _getInputValues)
-      this.close();
+      //this.close();
     });
   }
 
