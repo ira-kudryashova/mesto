@@ -8,10 +8,10 @@ class FormValidator {
     this._formElement = formElement;
   }
 
-  /** валидация форм */
-  enableValidation() {
-    this._setEventListeners();
-  }
+  // /** валидация форм */
+  // enableValidation() {
+  //   this._setEventListeners();
+  // }
 
   /** функция, которая добавляет класс с ошибкой */
   _showInputError() {
