@@ -23,13 +23,13 @@ class Popup {
       this.close();
     }
   };
-
-  _handleOverlayClose = (e) => {
-    //метод содержит логику закрытия попап нажатием на оверлей
-    if (e.target.classList.contains('popup_opened')) {
-      this.close();
-    }
-  };
+ 
+  // _handleOverlayClose = (e) => { // метод не используется в классе
+  //   //метод содержит логику закрытия попап нажатием на оверлей
+  //   if (e.target.classList.contains('popup_opened')) {
+  //     this.close();
+  //   }
+  // };
 
   setEventListeners() {
     // //метод добавления слушателя клика иконке закрытия попапа
